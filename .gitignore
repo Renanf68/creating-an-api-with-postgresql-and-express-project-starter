@@ -1,0 +1,9 @@
+# environment variables
+.env
+database.json
+
+# node modules
+node_modules
+
+# production
+dist
