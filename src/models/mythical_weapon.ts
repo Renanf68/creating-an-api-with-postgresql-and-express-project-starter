@@ -1,7 +1,7 @@
 import Client from "../database";
 
 export interface Weapon {
-  id: number;
+  // id: number;
   name: string;
   type: string;
   weight: number;
@@ -19,7 +19,7 @@ export class MythicalWeaponStore {
       throw new Error(`Cannot get weapons ${error}`);
     }
   }
-  async get(id: string): Promise<Weapon> {
+  async show(id: string): Promise<Weapon> {
     try {
       const sql = "SELECT * FROM mythical_weapons WHERE id=($1)";
       const conn = await Client.connect();
