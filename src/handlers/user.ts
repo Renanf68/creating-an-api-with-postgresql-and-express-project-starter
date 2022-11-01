@@ -56,7 +56,7 @@ const destroy = async (req: Request, res: Response) => {
   res.json(deleted);
 };
 
-const user_routes = (app: express.Application) => {
+const userRoutes = (app: express.Application) => {
   // app.get("/users", index);
   app.post("/users/create", create);
   app.post("/users/auth", auth);
@@ -64,4 +64,4 @@ const user_routes = (app: express.Application) => {
   app.delete("/users/:id", verifyAuthToken, destroy);
 };
 
-export default user_routes;
+export default userRoutes;

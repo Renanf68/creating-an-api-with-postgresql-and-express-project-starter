@@ -10,7 +10,7 @@ export class ProductStore {
   async index(): Promise<Product[]> {
     try {
       const conn = await Client.connect();
-      const sql = "SELECT * FROM products";
+      const sql = "SELECT * FROM products ORDER BY price ASC;";
       const result = await conn.query(sql);
       conn.release();
       return result.rows;

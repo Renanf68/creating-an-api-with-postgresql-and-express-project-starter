@@ -44,7 +44,7 @@ const destroy = async (req: Request, res: Response) => {
   res.json(deleted);
 };
 
-const order_routes = (app: express.Application) => {
+const orderRoutes = (app: express.Application) => {
   app.get("/orders", verifyAuthToken, index);
   app.get("/orders/:id", verifyAuthToken, show);
   app.post("/orders", verifyAuthToken, create);
@@ -53,4 +53,4 @@ const order_routes = (app: express.Application) => {
   app.post("/orders/:id/products", addProduct);
 };
 
-export default order_routes;
+export default orderRoutes;
