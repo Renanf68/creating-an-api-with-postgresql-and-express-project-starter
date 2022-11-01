@@ -5,6 +5,7 @@ const saltRounds = process.env.SALT_ROUNDS ?? "0";
 const pepper = process.env.PEPPER ?? "";
 
 export interface User {
+  id?: string;
   username: string;
   password?: string;
   password_digest?: string;
@@ -13,7 +14,7 @@ export interface User {
 export class UserStore {
   async show(id: string): Promise<User> {
     try {
-      const sql = "SELECT * FROM mythical_weapons WHERE id=($1)";
+      const sql = "SELECT * FROM users WHERE id=($1)";
       const conn = await Client.connect();
       const result = await conn.query(sql, [id]);
       conn.release();
